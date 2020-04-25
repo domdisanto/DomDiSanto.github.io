@@ -4,6 +4,8 @@ My name is Dominic DiSanto. I am a current candidate for a Masters of Science in
 
 Whether you've come to this page from my resume and application materials or out of an interest in a specific project or my work in general, I hope that you gain a perspective on my experience and skill set as a professional as well as a sense of my personal interests and passions. 
 
+Few of my projects are currently hosted on GitHub due to the inability to share patient data. I am in the process of translating projects to use similr, publicly available data to the best of my ability, with the end goal of including these projects and data within my GitHub profile.
+
 
 Outside of school and statistics, I enjoy playing tennis, drinking local beer and eating local food, and buying too many books and lying to myself that I'll get around to reading them eventually. 
 
