@@ -13,4 +13,4 @@ Please feel free to contact me with any questions at jdominicdisanto@gmail.com!
 \- Dominic
 
 
-<sub> In the rare instance I do so, any opinions or views herein expressed are solely my own and not those of the university or my employer. </sub>
+<sub> In the rare instance I do so, any opinions or views expressed herein are solely my own and not those of the university or my employer. </sub>
