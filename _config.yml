@@ -30,8 +30,8 @@ twitter_username: JDomDiSanto
 github_username:  DomDiSanto
 
 # Build settings
-#theme: minimal-mistakes-jekyll
 remote_theme: "mmistakes/minimal-mistakes@4.21.0" 
+#theme: minimal-mistakes-jekyll
 
 plugins:
   - jekyll-feed
