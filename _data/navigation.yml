@@ -3,11 +3,10 @@ main:
     url: /education/
   - title: "Work Experience"
     url: /experience/
-    children:
-      - title: Publications
-        url: /pubs/
-      - title: Project Experience
-        url: /projects/
+#  - title: Publications
+#    url: /experience/pubs/
+#  - title: Project Experience
+#    url: /experience/projects/
   - title: "Resume"
     url: /DiSanto_Resume.pdf/
   - title: "Posts"
