@@ -6,7 +6,7 @@ author_profile: true
 ---
 
 |------|-------|-------|
-| <img src="/assets/images/va.png" width="60"/>  | Statistician, U.S. Department of Veterans Affairs| <em> June '20 - Present </em>|
+| <img src="/assets/images/VA.png" width="60"/>  | Statistician, U.S. Department of Veterans Affairs| <em> June '20 - Present </em>|
 | <img src="/assets/images/seal.png" width="60"/> | Graduate Research Assistant, University of Pittsburgh, School of Pharmacy| <em> May '20 - Present</em>|
 | <img src="/assets/images/seal.png" width="60"/> | Data Analyst, University of Pittsburgh, School of Medicine | <em> Apr '18 - May '20 </em>|
 
