@@ -12,7 +12,7 @@ author_profile: true
 - Pennsylvania Commonwealth Equity Scholarship Recipient  
 <br>
 	
-<p> <b>Bachelor's of Science in Neuroscience</b> <em>(Aug '14 - Dec '20)</em> </p>
+<p> <b>Bachelor's of Science in Neuroscience</b> <em>(Aug '14 - Dec '18)</em> </p>
 <img src="/assets/images/seal.png" width="60"/> University of Pittsburgh, Dietrich School of Arts & Sciences
 - Minors in Applied Statistics, Chemistry
 - Elsie Hillman Honors Scholars Fellow, 2017-8 
