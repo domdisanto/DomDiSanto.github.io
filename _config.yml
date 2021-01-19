@@ -13,7 +13,7 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Homepage 
+title: About 
 email: jdominicdisanto@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Personal website for Dominic DiSanto, a Pittsburgh-based statistician
@@ -67,8 +67,8 @@ author:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://linkedin.com/in/dominic-disanto"
-    - label: "Homepage"
-      icon: "fas fa-fw fa-link"
+    - label: "Bio"
+      icon: "fas fa-fw fa-id-card"
       url: "/"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
