@@ -59,7 +59,7 @@ plugins:
 author:
   name   : "Dominic DiSanto"
   avatar : "/assets/images/disanto.jpg"
-  bio    : "Pittsburgh-based statistician and prospective PhD applicant in biostatistics & statistics"
+  bio    : "Statistician and prospective PhD applicant in biostatistics & statistics"
   location: "Pittsburgh, PA" 
   links:
     - label: "GitHub"
