@@ -5,6 +5,13 @@ main:
     url: /education/
   - title: "Work Experience"
     url: /experience/
+#    subcategories:
+#      - subtitle: "VA Projects"
+#        subhref: "/experience/VA/"
+#      - subtitle: "Data Science Education"
+#        subhref: "/experience/data-science-ed"
+#      - subtitle: "TBI Research"
+#        subhref: "/experience/TBI/"
 #  - title: Publications
 #    url: /experience/pubs/
 #  - title: Project Experience
