@@ -21,6 +21,10 @@ author_profile: true
 | Minors in Applied Statistics, Chemistry | |  --->
 
 
+<img src="/assets/images/harvard_png_crop2.png" width="70"/> **Harvard T.H. Chan School of Public Health**  
+<span style="font-size:0.75em"> Incoming PhD Student, Department of Biostatistics  
+*Aug '22*
+</span>
 
 <img src="/assets/images/seal.png" width="70"/> **Graduate School of Public Health**  
 <span style="font-size:0.75em"> Master's of Science in Biostatistics, Concentration in Health Data Science  

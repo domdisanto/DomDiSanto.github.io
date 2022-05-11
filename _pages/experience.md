@@ -17,7 +17,7 @@ author_profile: true
 
 <span style="font-size:0.8em">
 <img src="/assets/images/seal.png" width="40"/> Graduate Research Assistant, University of Pittsburgh School of Pharmacy   
-&nbsp; &nbsp; &nbsp; <em> May '20 - Present</em>  
+&nbsp; &nbsp; &nbsp; <em> May '20 - Aug '21</em>  
 </span>
 
 <span style="font-size:0.8em">
