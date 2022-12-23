@@ -12,7 +12,7 @@ author_profile: true
 
 <span style="font-size:0.8em">
 <img src="/assets/images/VA.png" width="40"/>  Statistician, U.S. Department of Veterans Affairs   
-&nbsp; &nbsp; &nbsp; <em> June '20 - Present </em>
+&nbsp; &nbsp; &nbsp; <em> June '20 - July '22 </em>
 </span>
 
 <span style="font-size:0.8em">
@@ -27,6 +27,15 @@ author_profile: true
 
 <br>
 
+
+## Languages
+
+<img src="/assets/images/rstudio.png" width="100"/>
+<img src="/assets/images/tidyverse.png" width="100"/>
+<img src="/assets/images/python.png" width="100"/> 	
+<img src="/assets/images/sas.png" width="100"/>
+<img src="/assets/images/sql_edit.png" width="100"/>
+  
 
 ## Projects, Skills, & Interests
 
@@ -80,13 +89,6 @@ author_profile: true
 </span>
 
 
-### Languages
-
-<img src="/assets/images/rstudio.png" width="100"/>
-<img src="/assets/images/tidyverse.png" width="100"/>
-<img src="/assets/images/python.png" width="100"/> 	
-<img src="/assets/images/sas.png" width="100"/>
-<img src="/assets/images/sql_edit.png" width="100"/>
 
 
 ### Publications  
