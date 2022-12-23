@@ -21,9 +21,7 @@ author_profile: true
 </p>
 
 
-## Background
-
-### Education
+## Education
 
 
 <img src="/assets/images/harvard_png_crop2.png" width="70"/> **Harvard T.H. Chan School of Public Health**  
