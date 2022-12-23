@@ -5,7 +5,7 @@ layout: single
 author_profile: true
 ---
 
-## Hi, I'm Dominic!
+## Background
 
 
 <p>
