@@ -20,11 +20,6 @@ author_profile: true
 </span>
 </p>
 
-<p>
-<span style="font-size:0.8em">
-For more information about my previous work experience and education, see my <a href="/education"> Education </a> and <a href="/experience/">Experience</a> pages respectivey.
-</span>
-</p>
 
 ## Background
 
