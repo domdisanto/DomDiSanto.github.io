@@ -1,11 +1,13 @@
 main:
+#  - title: "Home"
+#    url: /
   - title: "About"
     url: /about/
 #  - title: "Education"
 #    url: /education/
-  - title: "Research"
-    url: /research/
-  - title: "Work Experience"
+#  - title: "Research"
+#    url: /research/
+  - title: "Experience"
     url: /experience/
 #    subcategories:
 #      - subtitle: "VA Projects"
