@@ -1,0 +1,378 @@
+\documentclass{beamer}
+%tlmgr install collection-fontsextra
+
+%%\newlength{\wideitemsep}
+%%\setlength{\wideitemsep}{\itemsep}
+%%\addtolength{\wideitemsep}{25pt}
+%%\let\olditem\item
+%%\renewcommand{\item}{\setlength{\itemsep}{\wideitemsep}\olditem}
+
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{verbatim}  % allows begin...end{comment}
+\usepackage{graphicx}
+\usepackage[skins,raster]{tcolorbox}
+\usepackage{bbm}
+%\usepackage{natbib}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=black, urlcolor=blue, citecolor=red}
+
+
+%%%%%%%%%%%%%%%%%%%
+%% Beamer Set-up
+%%%%%%%%%%%%%%%%%%%
+\newcommand{\footer}{Dissertation Work Review}
+
+\mode<presentation>{\usetheme{CambridgeUS}} % many others are available
+\setbeamercolor{title}{bg=crimson,fg=white}
+\setbeamertemplate{page number in head/foot}{} % Include/Remove page numbering
+\setbeamerfont{footnote}{size=\tiny}
+\setbeamertemplate{navigation symbols}{} % eliminate nav symbols in footer
+
+
+\definecolor{crimson}{HTML}{A51C30}
+\definecolor{darkred}{HTML}{A51C30}
+\definecolor{offwhite}{HTML}{A1A1A1}
+
+\newcommand{\question}[1]{\textcolor{crimson}{#1}}
+
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}
+    \usebeamerfont{author in head/foot}\insertshortauthor%~~\beamer@ifempty{\insertshortinstitute}{}{(\insertshortinstitute)}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\footer 
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+\useoutertheme{miniframes}
+
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>
+%    \frametitle{Outline for Section \thesection}
+    \frametitle{Outline}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Bibliography Options 
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[backend=biber, style=alphabetic, url=false, doi=false, maxcitenames=1, isbn=false]{biblatex}
+%\addbibresource{ReadingGroup.bib}
+%\usepackage[backend=biber, giveninits=true]{biblatex}
+
+
+\title{Dissertation Work Formulation}
+\author{Dominic DiSanto; Tianxi Cai \& Junwei Lu}
+\institute[]{Department of Biostatistics, Harvard University}
+\date{\today}
+
+
+% Custom commands 
+\newcommand{\Loss}{\mathcal{L}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\Exp}{\EE}
+\newcommand{\Xbf}{\mathbf{X}}
+\newcommand{\Wbf}{\mathbf{W}}
+\renewcommand{\Pr}{\mathbb{P}}
+\newcommand{\ATE}{\tau}
+\newcommand{\tATE}{\text{ATE}}
+
+\newcommand{\Xb}{\mathbf{X}}
+\newcommand{\Yb}{\mathbf{Y}}
+\newcommand{\Tb}{\mathbf{T}}
+
+\newcommand{\Zbar}{\overline{Z}}
+\newcommand{\Abar}{\overline{A}}
+\newcommand{\Lbar}{\overline{L}}
+
+\newcommand{\zbar}{\overline{z}}
+\newcommand{\abar}{\overline{a}}
+\newcommand{\lbar}{\overline{\ell}}
+
+
+\newcommand{\IPW}{{\text{IPW}}}
+\newcommand{\AIPW}{{\text{AIPW}}}
+\newcommand{\DIPW}{{\text{DIPW}}}
+\newcommand{\ORA}{{\text{ORA}}}
+\newcommand{\Data}{\mathcal{D}}
+
+\newcommand{\subitem}[1]{\begin{itemize} \item #1 \end{itemize}}
+
+\newcommand{\widesubitem}[2]{\begin{itemize} \item #1 \end{itemize} \vspace{#2}}
+
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\NN}{\mathbb{N}}
+
+\newcommand{\Ind}{\mathbbm{1}}
+
+\newcommand{\pistar}{\pi^*}
+
+\newcommand{\pconv}{\stackrel{p}{\rightarrow}}
+\newcommand{\dconv}{\stackrel{d}{\rightarrow}}
+
+\newcommand{\assign}{\mathbbm{d}}
+
+\renewcommand{\texttilde}{\textasciitilde}
+\newcommand\indp{\protect\mathpalette{\protect\indpT}{\perp}}
+\def\indpT#1#2{\mathrel{\rlap{$#1#2$}\mkern2mu{#1#2}}}
+
+
+\newenvironment{wideitemize}{\itemize\addtolength{\itemsep}{8pt}}{\enditemize}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+    % START %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\frame[plain]{\titlepage}
+
+\begin{frame}{Today's Goals/Questions}
+    \begin{itemize}\setlength\itemsep{0.75em}
+        \item Review our set-up (observables, data-generating processes)
+            \subitem{Longitudinal modified treatment policy (LMTP) framework}
+        \item Understand most relevant extensions of treatment assignment
+        \item Understand PheWAS-relevant formulation of outcomes in $Y$
+    \end{itemize}
+\end{frame}
+
+
+\section{Set-up}
+
+
+\begin{frame}{Set-Up and Observables}
+    \begin{itemize}\setlength\itemsep{1em}
+        \item For times $t=1, \dots, \tau$, observe $Z = (L_1, A_1, \cdots L_\tau, A_\tau, Y) \sim \PP$ \vspace{0.5em}
+            \subitem{Permit the short-hand $\Abar_t = (A_t, \cdots, A_1)$, $\Lbar_t$ similarly defined, and history as $H_t = (\Abar_{t-1}, \Lbar_t)$} \vspace{0.5em}
+        
+            \subitem{Covariates $L_t, \ e.g. 
+            \begin{cases} 
+                \text{EHR Codes Accumulation or general Hawkes process} \\ 
+                \text{Demographic/static information} \\
+            \end{cases}
+            $
+            } \vspace{0.5em}
+
+            \subitem{Treatment $A_t$: binary, multinomial, continuous (e.g. dose)
+                \subitem{More detailed discussion under Treatment/Policy Evaluation section}
+            } \vspace{0.5em}
+
+            \subitem{Outcome $Y_t$
+                \subitem{For first discussion, assume univariate $Y$} 
+                \subitem{More detailed discussion under PheWAS section}
+            } 
+        \end{itemize}
+
+\end{frame}
+
+\begin{frame}{{Data Generating Process \& Treatment Mechanism}}
+
+    \begin{itemize}\setlength\itemsep{1em}
+        \item Assume generating functions with noise $U = (U_A, U_L, U_Y)$
+
+            \widesubitem{$A_t = f_{A_t}(H_t,  U_{A_t})$}{0.5em}
+            \widesubitem{$L_t = f_{L_t}(A_t, H_t,  U_{L_t})$}{0.5em}
+            \widesubitem{$Y = f_Y(A_{\tau}, H_\tau,  U_Y)$}{0.5em}
+
+        \item Assume a new assignment function $\assign(a_t, h_t^\assign) \rightarrow a^\assign_t $
+
+        \item Typical non-parametric SEM set-up (similar, somewhat more general to Aaron Sonabend's SSRL set-up)
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Example $\assign$ functions}
+
+    \begin{itemize}\setlength\itemsep{1.5em}
+        \item Thresholding, e.g. patient's with SBP$>130$ receive drug $H$ and otherwise drug $G$ (here $SBP = L_t$)
+        \subitem{$A_t^\assign = \assign(a_t, h_t) = \Ind(SBP_t>130)H + \Ind(SBP_t\leq 130)G$}
+
+        \item Shifting for continuous treatments, e.g. drug dose 
+        \subitem{If $P(A_t < u_t(h_t) | H_t = h_t) = 1$, then 
+        \begin{gather*}
+            \assign(a_t, h_t) 
+            = 
+            \begin{cases}
+                a_t + \delta &  a_t \leqslant u_t(h_t) - \delta \\ 
+                a_t & a_t > u_t(h_t)-\delta
+            \end{cases}
+        \end{gather*}
+        } 
+
+        \newpage 
+
+        \item Can induce stochastic interventions using noise $\varepsilon\indp\PP$, now $\assign(a_t, h_t, \varepsilon)$
+        \item 
+        \subitem{Ex: Shifted/Incremental Propensity Score. For a binary treatment with density $g(a|h_t)$ (and user defined $\delta>0$),}
+
+        \begin{gather*}
+            g_t^\assign(1|h_t) = 
+            \frac{\delta g_t(1|h_t)}{\delta g_t(1|h_t) + 1-g_t(1|h_t)}
+            \\ \\ 
+            \assign(a_t, h_t) = \Ind(\epsilon_t \leq g_t^\assign(1|h_t))
+            \text{ for } \epsilon_t \sim U(0,1)
+        \end{gather*}
+
+
+
+    \end{itemize}
+
+
+\end{frame}
+
+\begin{frame}{Counterfactuals}
+    \begin{itemize}
+
+    \item Observe $\Abar_t$, with counterfactuals generated by the assignment functions (defined recursively through $t=1$)
+
+        \widesubitem{Write the counterfactual $A_t(A^\assign_{t-1}) = f_{A,t}(H_t(\Abar_{t-1}^\assign), U_{A,t})$
+            \subitem{``What treatment would we observe at $A_t$, had we applied our intervention policy $\assign$ through time $t-1$?''}
+            \subitem{``Natural value of treatment''}
+        }{0.3em}
+
+        \widesubitem{$L_t(\Abar^\assign_{t-1}) = f_{L,t}(A_{t-1}^\assign, H_{t-1}^\assign, U_{L,t})$}{0.3em}
+
+        \widesubitem{$Y(\Abar^\assign) = f_Y(\Abar_\tau^\assign, H_\tau(\Abar_{\tau-1}^\assign), U_Y)$}{0.3em}
+
+    \item Estimand under a given policy $\assign$ is $\theta := \EE\left[ Y(\Abar^\assign) \right]$
+
+    \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Extensions/Problem Formulation}
+    \begin{itemize}\setlength\itemsep{1.5em}
+        \item Extend the framework's treatment regime (for a simple/univariate outcome)
+        \widesubitem{Via assignment function(s) $\assign$}{1em}
+        \widesubitem{Via treatment vector $A_t$}{1em}
+        %\item Nima has a ``causal survival'' paper extending LMPT that includes competing risks 
+
+        \item For simple treatment/policy comparisons, multivariate or high-dimensional $Y\in\RR^d$ 
+    \end{itemize}
+\end{frame}
+
+\section{Treatment/Policy Evaluation ($\assign, A$)}
+
+
+
+\begin{frame}{$\assign$}
+    \begin{itemize}\setlength\itemsep{1em}
+        \item We can alter $\assign$ 
+        \subitem{Conceptually we are then trying to estimate parameters/functions that describe treatment patterns, while comparing $\EE[Y^\assign]$}
+        \subitem{We can write assignment function as complicated/high-dimensional function 
+        \widesubitem{$\assign(\abar_t, \lbar_t; \alpha, \beta) = \alpha^T\abar_t + \beta^T\lbar_t$}{0.5em}
+        \widesubitem{Non-parametric $\assign = m(\abar_t, \lbar_t)$}{0.5em}
+        }
+
+        \item We can extend $A_t$ (e.g. $A_t$ is now multivariate, captures treatment more globally)
+            \widesubitem{Conceptually we still have ``control'' over assignment via $\assign$ that we can (and must) specify}{0.5em}
+            \widesubitem{e.g. high-dimensional, categorical $A\in\RR^d$ drug choices}{0.5em}
+
+    \end{itemize}
+\end{frame}
+
+
+
+\section{PheWAS ($Y$)}
+
+\begin{frame}{PheWAS}
+    \begin{itemize}\setlength\itemsep{1em}
+        \item Can simplify treatment w/in previous framework
+        \subitem{i.e. binary treatment $A$, two policies $\assign_0(a_t) = a_t$, $\assign_1(a_t) = 1-a_t, t=\{0, 1\}$}
+        \item Now interested in settings with outcome diversity, $Y \in \RR^d$
+        \item Sub-group analysis? 
+            \subitem{e.g. In RA, how could we identify sub-types of heart failure (preserved vs reduced ejection fraction) for which anti-TNF is effective?}
+
+        \item Disjoint outcomes? 
+        \subitem{Across $Y\in\RR^d-$outcomes (possibly dependent, overlapping), how do we identify the subset of $Y$ (if any) for which drug $G$ has non-0 treatment effect?}
+    \end{itemize}
+\end{frame}
+
+
+\section{Summary/Questions}
+
+\begin{frame}{Summary/Questions}
+    \begin{itemize}\setlength\itemsep{1.5em}
+        \item Is this (LMTP) set-up the appropriate framework which we can extend? 
+        \item What are the relevant extensions of treatment trajectories via $A_t, \assign$?
+        \subitem{Parameterizing $\assign(a_t, h_t)$ as a high-dimensional policy}
+        \widesubitem{Specifying a form for $A_t$ with simple policy $\assign$}{0.5em}
+
+        \item What are the relevant extensions outcomes $Y$ for desired PheWAS studies (and how can we do better than na\"ive multiple comparisons adjustment)?
+        \subitem{Sub-group identification?}
+        \widesubitem{High-/Multi-dimensional $Y\in\RR^d$?}{0.5em}
+
+    \end{itemize}
+\end{frame}
+
+
+\title{Appendix}
+\author{} 
+\institute{} 
+\subtitle{} 
+\date{} 
+\frame{\titlepage}
+
+\appendix 
+    \section{Identification Assumptions} 
+
+
+    \begin{frame}{Identification}
+        \begin{enumerate}
+            \item Positivity: $(a_t, h_t) \in \text{Supp}(A_t, h_t) \Rightarrow \assign(a_t, h_t) \in \text{Supp}, \forall t \in [\tau]$ 
+
+            \item Strong Sequential Randomization: $U_{A_t} \indp \underline{U}_{L, t+1}, \underline{U}_{A, t+1} \mid H_t, \ \forall t \in[\tau]$
+        \end{enumerate}
+        \vspace{2em}
+
+        The Strong Sequential Randomization assumption can be slightly weakened for stochastic interventions
+
+        %Estimation in general setting proceeds via TMLE (with $\tau+1$ robustness)
+    \end{frame}
+
+    
+    \iffalse 
+    \begin{frame}{Estimation under LMTP (Simple Set-up)}
+    \end{frame}
+    \fi 
+
+    \section{Misc. Goals/Timeline}
+
+    \begin{frame}[allowframebreaks]
+    \frametitle{\large{Rough Timeline of G3 ('24-Spring '25)}}
+
+        \begin{itemize}\setlength\itemsep{1em}
+            \item Continue/complete early work 
+            \begin{itemize}
+            \item \textbf{August} Submit Weijing-Zongqi applied paper 
+            \item \textbf{Fall-Winter} Complete draft of optimal assortment work with Junwei
+            \end{itemize}
+            \item \textbf{October -} Finalize committee 
+            \begin{itemize}
+                \item Possibly Rajarshi, Sebastien, Nima 
+            \end{itemize}
+            \item \textbf{March -}  Oral Examination
+        \end{itemize}
+    \end{frame}
+
+
+
+\end{document}0
