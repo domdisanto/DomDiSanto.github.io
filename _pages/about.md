@@ -10,13 +10,13 @@ author_profile: true
 
 <p>
 <span style="font-size:0.8em">
-	I am currently a first-year PhD student in Department of Biostatistics in the T.H Chan School of Public Health at 	Harvard University. I previously received my Bachelor's of Science in Neuroscience and my Master's of Science in Biostatistics from the University of Pittsburgh, concurrently working for the University of Pittsburgh Medical Center and later in the Veterans Affairs Healthcare System.
+	I am currently a third-year PhD candidate in Department of Biostatistics in the T.H Chan School of Public Health at Harvard University, working with Dr. Tianxi Cai and Dr. Junwei Lu. I previously received my Bachelor's of Science in Neuroscience and my Master's of Science in Biostatistics from the University of Pittsburgh, concurrently working for the University of Pittsburgh Medical Center and later in the Veterans Affairs Healthcare System.
 </span>
 </p>
 
 <p>
 <span style="font-size:0.8em">
-	I am still (always) developing my interests within biostatistics, but I am currently curious about causal inference in settings with missing, misspecified, or otherwise imperfect data. My previous research experience includes clinical prediction model development and implementation science work in the Veterans Affairs Hospital System.
+	I am still (always) developing my interests within biostatistics, but I am currently curious about causal inference in settings with missing, misspecified, or otherwise imperfect data and applications in analysis of electronic healthcare record data. My previous research experience includes clinical prediction model development and implementation science work in the Veterans Affairs Hospital System.
 </span>
 </p>
 
