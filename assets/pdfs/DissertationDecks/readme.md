@@ -1,3 +1,6 @@
-Currently generating new decks from Documents/GradSchool/PhD/Research/Tianxi/CausalPheWAS as present project of interest 
+Currently generating new decks from Overleaf 
 
-General decks come from .../Research/Dissertation/UpdateDecks
+Decks and zipped source files are stored redundantly at: 
+    ...PhD/Research/Tianxi/CausalPheWAS
+    ...PhD/Research/Dissertation/UpdateDecks
+
