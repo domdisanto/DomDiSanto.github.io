@@ -79,10 +79,10 @@ li {
 }
 
 img.photo {
-  float: right;
+  float: left;
   width: 170px;
-  margin: 0 0 1rem 1.8rem;
-  border-radius: 6px;
+  margin: 0 1rem 1rem 1.8rem;
+  border-radius: 24px;
 }
 
 .news {
