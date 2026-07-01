@@ -1,44 +1,41 @@
----
-# Edit theme's home layout instead if you wanna make some changes
-# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-layout: single
-author_profile: true
----
-<!doctype html>
-<html>
-		<meta name="google-site-verification" content="LU8z4s0EzESOGEEFjEUCc1Bjc3spR4vfe0oWfoZ2Ysk" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Dominic — PhD student in Statistics at Harvard.">
+  <title>Dominic</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-  <head>
-	<meta name="google-site-verification" content="LU8z4s0EzESOGEEFjEUCc1Bjc3spR4vfe0oWfoZ2Ysk" />
-    <meta charset="utf-8">
-	 {%- feed_meta -%}
-  {%- if jekyll.environment == 'production' and site.google_analytics -%}
-    {%- include google-analytics.html -%}
-  {%- endif -%}
-  <meta name="google-site-verification" content="P5JvIrpAzGuAYMCBT3_-1TEpWsUUoQAaYK3B6hgaauA" />
- </head>
-	<body>
-	  <h3> Hi, I'm Dominic!</h3>
-	  <span style="font-size:0.8em">
-	  <p>
-    Thanks for coming to my personal & professional website. The site currently serves mostly to present my academic and professional experience and interests in biostatistics. I also include information relevant to my background and current skill set.
-	  </p>
+<h1>Dominic</h1>
+<h3> PhD Candidate in Biostatistics</h3>
+jdisanto (at) g (dot) harvard (dot) edu
 
-	  <p>
-    More information about my background can be found on my <a href="/about/"> About Me </a> page. A list of my publications is available on the <a href="/research/"> Research </a> page. Much of my work during my time at the VA cannot be shared publicly, but some of my previous projects are hosted on my <a href="https://github.com/domdisanto/">GitHub profile</a> and details about my projects available in the  <a href="/experience/"> Experience </a> section.
-	  </p>
+<div id="nav"></div>
+<script>
+  fetch('nav.html').then(r => r.text()).then(h => {
+    document.getElementById('nav').innerHTML = h;
+    // highlight current page
+    const page = location.pathname.split('/').pop() || 'index.html';
+    const link = document.querySelector(`nav a[href="${page}"]`);
+    if (link) link.classList.add('active');
+  });
+</script>
 
-		<h4> What I'm Working On Now: </h4>
-		<p>
-		<!---%In the short-term, I'm tooling around with <a href="http://www.quarto.org">Quarto</a>. I've compiled <a href="/blog/Quarto">some useful links and presented an example PDF </a> generated from Quarto using RStudio as well as <a href="/blog/Quarto_Jupyter"> a shorter example using Quarto in Jupyter Labs with Python </a> in my latest posts.---->
-		I'm currently a PhD Candidate in Biostatistics at Harvard University. I've been working most recently with Junwei Lu and Tianxi Cai in our department, with interests in causal inference, combinatorial inference, and methodological development for electronic healthcare record data. <!--I've also been reviewing methods in graphical models and Graphical Neural Networks. 
-		<a href="{{ site.url }}{{ site.baseurl }}/assets/pdfs/DiSanto_GraphicalModels_Overview.pdf">See here </a> an overview of graphical model methods as well as <a href="{{ site.url }}{{ site.baseurl }}/assets/pdfs/DiSanto_GNN_Slides.pdf"> here</a> a brief review of recent papers in the Graphical Neural Networks/Geometric Deep Learning space .--->
-		</p>
+<p class="news"><em>June 2026: New preprint — "Your Paper Title Here" [<a href="#">arXiv</a>].</em></p>
 
-		<p>
-		I'm currently listening to a lot of <a href="https://www.youtube.com/watch?v=Xjd_hfljVpw"> Short Fictions </a> and some <a href="https://www.youtube.com/watch?v=ot1C3erQaZU&t=57s"> Retirement Party </a> (RIP).  
-		</p>
+<!-- Replace photo.jpeg with your own headshot -->
+<img class="photo" src="assets/disanto.jpg">
 
-	</span>
-	</body>
+<p>I am a PhD student in the <a href="https://statistics.fas.harvard.edu/">Department of Biostatistics</a> at Harvard University. My research focuses on statistical theory and methodology, including explanation stability across model classes and semiparametric causal inference.</p>
+
+<p>Previously, I [brief background — e.g. degree, prior institution]. A CV is available <a href="assets/cv.pdf">here</a>.</p>
+
+<p>You can reach me at <a href="mailto:you@harvard.edu">you@harvard.edu</a>.</p>
+
+<footer>&copy; 2026 Dominic</footer>
+
+</body>
 </html>

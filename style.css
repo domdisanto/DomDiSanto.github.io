@@ -1,0 +1,112 @@
+/* Minimal academic site — one notch above bare HTML */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #1a1a1a;
+  background: #fafafa;
+  padding: 3rem 1.5rem;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.3rem;
+}
+
+h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #666;
+  margin-top: 2rem;
+  margin-bottom: 0.6rem;
+}
+
+nav {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+nav a {
+  margin-right: 1.2rem;
+  text-decoration: none;
+  color: #777;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.15s;
+}
+
+nav a:hover,
+nav a.active {
+  color: #1a1a1a;
+}
+
+a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+ul {
+  margin-bottom: 1rem;
+  padding-left: 1.4rem;
+}
+
+li {
+  margin-bottom: 0.6rem;
+}
+
+img.photo {
+  float: right;
+  width: 170px;
+  margin: 0 0 1rem 1.8rem;
+  border-radius: 6px;
+}
+
+.news {
+  font-style: italic;
+  margin-bottom: 1.6rem;
+  font-size: 0.92rem;
+  color: #555;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin: 1.8rem 0;
+}
+
+footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e0e0e0;
+  font-size: 0.82rem;
+  color: #aaa;
+}
+
+@media (max-width: 500px) {
+  body { padding: 1.5rem 1rem; }
+  img.photo { float: none; display: block; margin: 0 0 1rem 0; }
+}

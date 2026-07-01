@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Misc — Dominic</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Dominic</h1>
+
+<div id="nav"></div>
+<script>
+  fetch('nav.html').then(r => r.text()).then(h => {
+    document.getElementById('nav').innerHTML = h;
+    // highlight current page
+    const page = location.pathname.split('/').pop() || 'index.html';
+    const link = document.querySelector(`nav a[href="${page}"]`);
+    if (link) link.classList.add('active');
+  });
+</script>
+
+<h2>Teaching</h2>
+<ul>
+  <li><strong>STAT 1XX: Course Title</strong> — Teaching Fellow, Fall 2025.</li>
+  <li><strong>STAT 2XX: Course Title</strong> — Teaching Fellow, Spring 2025.</li>
+</ul>
+
+<h2>Notes &amp; slides</h2>
+<ul>
+  <li><a href="#">Lecture notes on topic</a> (PDF, 2025)</li>
+</ul>
+
+<h2>Links</h2>
+<ul>
+  <li><a href="https://github.com/yourusername">GitHub</a></li>
+  <li><a href="https://scholar.google.com/">Google Scholar</a></li>
+</ul>
+
+<footer>&copy; 2026 Dominic</footer>
+
+</body>
+</html>
