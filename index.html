@@ -3,15 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Dominic — PhD student in Statistics at Harvard.">
+  <meta name="description" content="Dominic — PhD candidate in Biostatistics at Harvard.">
   <title>Dominic</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>Dominic</h1>
-<h3> PhD Candidate in Biostatistics</h3>
-jdisanto (at) g (dot) harvard (dot) edu
+<div id="header"></div>
+<script>
+  fetch('header.html').then(r => r.text()).then(h => {
+    document.getElementById('header').innerHTML = h;
+  });
+</script>
 
 <div id="nav"></div>
 <script>
@@ -33,9 +36,8 @@ jdisanto (at) g (dot) harvard (dot) edu
 
 <p>Previously, I [brief background — e.g. degree, prior institution]. A CV is available <a href="assets/cv.pdf">here</a>.</p>
 
-<p>You can reach me at <a href="mailto:you@harvard.edu">you@harvard.edu</a>.</p>
 
-<footer>&copy; 2026 Dominic</footer>
+<!-- <footer>&copy; 2026 Dominic</footer> -->
 
 </body>
 </html>

@@ -8,7 +8,14 @@
 </head>
 <body>
 
-<h1>Dominic</h1>
+
+<div id="header"></div>
+<script>
+  fetch('header.html').then(r => r.text()).then(h => {
+    document.getElementById('header').innerHTML = h;
+  });
+</script>
+
 
 <div id="nav"></div>
 <script>
@@ -21,24 +28,34 @@
   });
 </script>
 
-<h2>Teaching</h2>
+<!-- Content-->
+
+<h2>Music</h2>
+<p style="font-size: 14px">
 <ul>
   <li><strong>STAT 1XX: Course Title</strong> — Teaching Fellow, Fall 2025.</li>
   <li><strong>STAT 2XX: Course Title</strong> — Teaching Fellow, Spring 2025.</li>
 </ul>
+</p>
 
-<h2>Notes &amp; slides</h2>
-<ul>
-  <li><a href="#">Lecture notes on topic</a> (PDF, 2025)</li>
-</ul>
+<h2>Reading</h2>
+
+    <h5> Prose </h5> 
+
+    <h5> Short Form </h5>
+
+    <h5> Poetry </h5>
+
+
 
 <h2>Links</h2>
 <ul>
-  <li><a href="https://github.com/yourusername">GitHub</a></li>
-  <li><a href="https://scholar.google.com/">Google Scholar</a></li>
+  <li><a href="https://github.com/domdisanto">GitHub</a></li>
+  <li><a href="https://scholar.google.com/citations?user=a6xjPOoAAAAJ&hl=en">Google Scholar</a></li>
 </ul>
 
-<footer>&copy; 2026 Dominic</footer>
+
+<!-- <footer>&copy; 2026 Dominic</footer> -->
 
 </body>
 </html>
