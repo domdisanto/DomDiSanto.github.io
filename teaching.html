@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Teaching — Dominic</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+
+<div id="header"></div>
+<script>
+  fetch('header.html').then(r => r.text()).then(h => {
+    document.getElementById('header').innerHTML = h;
+  });
+</script>
+
+
+<div id="nav"></div>
+<script>
+  fetch('nav.html').then(r => r.text()).then(h => {
+    document.getElementById('nav').innerHTML = h;
+    // highlight current page
+    const page = location.pathname.split('/').pop() || 'index.html';
+    const link = document.querySelector(`nav a[href="${page}"]`);
+    if (link) link.classList.add('active');
+  });
+</script>
+
+
+<p style="font-size: 14px">  I recently attended the <a href="https://www.causeweb.org/cause/ecots/ecots26"> Electronic Conference on Teaching Statistics (eCOTS) 2026 </a> and am looking forward to attending <a href = "https://preparingtoteach.org/">Preparing to Teach</a> this year, prior to JSM 2026! </p>
+
+<h2>Teaching</h2>
+<!-- <p style="font-size: 14px"> -->
+<ul>
+  <li><strong>BST 230: Probability</strong> — Teaching Fellow, Fall 2025 & Fall 2026.
+    <br> <p style="font-size: 12px"> Certificate of Distinction in Teaching, Fall 2025 </p> 
+    </li>
+  <li><strong>BST 222: Basics of Statistical Inference</strong> — Teaching Fellow, Fall 2024.
+    <br><p style="font-size: 12px"> Certificate of Distinction in Teaching, Fall 2024</p> </li>
+  <li><strong>BST 210: Applied Regression Analysis</strong> — Teaching Fellow, Spring 2024.</li>
+  <li> <strong>Qualifying Exam - Preparatory Tutor </strong> Summer 2024 - 2026</li>
+</ul>
+</p>
+
+<h2>Volunteer / Misc. Instruction</h2>
+<ul>
+    <li><strong>StatStart </strong> - Instructor, Summer 2026. </li> 
+    <li><strong>Data Science in Action, CELEHS</strong> - Instructor, Summer 2026. </li> 
+    <!-- <li><strong>Harvard Biostatistics HIV/AIDS Working Group</strong> - Seminar Co-Organizer, 2026-7</li> -->
+    <li><strong>Data Adventure Day, Harvard Department of Statistics</strong>, Volunteer Summer 2024</li>
+<ul>
+<!-- 
+
+<h2> Misc. Notes </h2>
+<ul>
+    <li> Deymystifying Measure Theory for Probability </li>
+    <li> (Some) Modern Topics in Multiple Testing (E-Values, FWER Control, Conditional Calibration) </li>
+</ul> -->
